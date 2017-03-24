@@ -115,27 +115,6 @@ export default class PatientViewPage extends React.Component<IPatientViewPagePro
 
         //TODO: this should be done by a module so that it can be reused on other pages
 
-        var qs = queryString.parse((window).location.search);
-
-        var newParams: any = {};
-        if ('cancer_study_id' in qs) {
-            newParams['studyId'] = qs.cancer_study_id;
-        }
-        if ('case_id' in qs) {
-            newParams['caseId'] = qs.case_id;
-        }
-
-        if ('sample_id' in qs) {
-            newParams['sampleId'] = qs.sample_id;
-        }
-
-        var navCaseIdsMatch = routingStore.location.pathname.match(/(nav_case_ids)=(.*)$/);
-        if (navCaseIdsMatch && navCaseIdsMatch.length > 2) {
-            newParams['navCaseIds'] = navCaseIdsMatch[2];
-        }
-
-        routingStore.updateRoute(newParams);
-
         const reaction1 = reaction(
             () => props.routing.location.query,
             query => {
