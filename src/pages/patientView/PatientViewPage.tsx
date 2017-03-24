@@ -345,10 +345,6 @@ export default class PatientViewPage extends React.Component<IPatientViewPagePro
 
         const paramArray: string[] = [];
 
-        // _.each(newProps, (val: string, key: string)=>paramArray.push(`${key}=${val}`));
-        //
-        // console.log(paramArray.join('&'));
-
         // note that $.param is going to encode the URI
         const params = $.param(newProps);
 
