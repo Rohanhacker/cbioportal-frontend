@@ -114,10 +114,9 @@ export default class PatientViewPage extends React.Component<IPatientViewPagePro
         this.hotspots3dClient = new CancerHotspotsAPI(getHotspots3DApiUrl());
 
         //TODO: this should be done by a module so that it can be reused on other pages
-        const qs = queryString.parse((window as any).location.search);
 
         const reaction1 = reaction(
-            () => props.routing.query,
+            () => props.routing.location.query,
             query => {
 
                 if ('studyId' in query) {
